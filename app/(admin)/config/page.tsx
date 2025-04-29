@@ -1,6 +1,7 @@
 
 import { TablaEstudiantes } from "@/components/tabla-estudiantes";
 import { TablaMaestros } from "@/components/tabla-maestros";
+import Link from "next/link";
 
 export default function ConfigPage() {
   return (
@@ -12,6 +13,8 @@ export default function ConfigPage() {
       <br/>
       <h1 className="text-3xl font-bold mb-6">Sistema de Maestros</h1>
       <TablaMaestros />
+
+      <button><Link href="/">Ir a inicio</Link></button>
       </div>
     </main>
   );
