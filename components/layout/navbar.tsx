@@ -7,8 +7,8 @@
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import Link from "next/link";
 
-const APP_TITLE = "Franck page" as const;
-const APP_TITLE2 = "-" as const;
+const APP_TITLE = "School App" as const;
+const APP_TITLE2 = "Home" as const;
  
 /**
  * # Barra de navegación principal de la aplicación.
@@ -59,14 +59,14 @@ export const Navbar: React.FC = () => {
       <Link href="/" className="hover:opacity-80 transition-opacity">
         <h4>{APP_TITLE2}</h4>
       </Link>
-      <Link href="/servicios" className="hover:opacity-80 transition-opacity">
-        <h4>{"Servicios"}</h4>
+      <Link href="/config" className="hover:opacity-80 transition-opacity">
+        <h4>{"Config"}</h4>
       </Link>
-      <Link href="/citas" className="hover:opacity-80 transition-opacity">
-        <h4>{"Citas"}</h4>
+      <Link href="/config/estudiantes" className="hover:opacity-80 transition-opacity">
+        <h4>{"Estudiantes"}</h4>
       </Link>
-      <Link href="/about" className="hover:opacity-80 transition-opacity">
-        <h4>{"About"}</h4>
+      <Link href="/config/maestros" className="hover:opacity-80 transition-opacity">
+        <h4>{"Maestros"}</h4>
       </Link>
 
       {/* Controles */}
