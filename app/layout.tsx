@@ -61,12 +61,9 @@ type RootLayoutProps = Readonly<{
  * @see {@link ThemeProvider} - Proveedor del sistema de temas
  * @see {@link Navbar} - Barra de navegación principal
  */
-
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: RootLayoutProps): React.ReactElement {
   return (
     <html lang="es">
       <body className="min-h-screen bg-background font-sans antialiased">
