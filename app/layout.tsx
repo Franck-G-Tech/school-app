@@ -1,6 +1,9 @@
 import { Providers } from "./providers";
 import "@/app/styles/globals.css";
-//import "@/app/globals.css"
+import { ThemeProvider } from "@/components/theme/theme-provider"
+import type { Metadata } from "next";
+import { Navbar } from "@/components/layout/navbar";
+import "@/styles/globals.css"; 
 
 export default function RootLayout({
   children,
