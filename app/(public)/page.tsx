@@ -9,6 +9,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold mb-6">Sistema de Estudiantes</h1>
       <TablaEstudiantes />
       <br />
+      <br/>
       <h1 className="text-3xl font-bold mb-6">Sistema de Maestros</h1>
       <TablaMaestros />
       </div>
