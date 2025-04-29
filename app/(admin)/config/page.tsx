@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function ConfigPage() {
   return (
-    <main className="container mx-auto py-10">
-      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', marginBottom: '20px' }}>
+    <div className="container mx-auto py-10">
+      
       <h1 className="text-3xl font-bold mb-6">Sistema de Estudiantes</h1><br />
       <TablaEstudiantes />
       <br />
@@ -15,7 +15,7 @@ export default function ConfigPage() {
       <TablaMaestros />
 <br />
       <button><Link href="/">Ir a inicio</Link></button>
-      </div>
-    </main>
+      
+    </div>
   );
 }
