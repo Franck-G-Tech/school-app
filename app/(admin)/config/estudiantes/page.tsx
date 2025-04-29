@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ConfigPage() {
   return (
-    <div className="container mx-auto py-10">
+    <div className="flex min-h-[calc(70vh-5rem)] flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-6">Sistema de Estudiantes</h1>
       <TablaEstudiantes />
       <br />
