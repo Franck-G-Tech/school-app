@@ -9,7 +9,7 @@ import { ThemeToggle } from "../theme/theme-toggle";
 import Link from "next/link";
 
 const APP_TITLE = "School App" as const;
-const APP_TITLE2 = "Home" as const;
+//const APP_TITLE2 = "Home" as const;
  
 /**
  * # Barra de navegación principal de la aplicación.
