@@ -1,7 +1,7 @@
 "use client";
 // Indica que este componente es un componente cliente en Next.js, necesario para usar hooks como useState.
 
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 // Importa un componente de botón reutilizable.
 
 import {
@@ -10,10 +10,10 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../components/ui/dialog";
 // Importa componentes para construir un diálogo modal.
 
-import { Input } from "@/components/ui/input";
+import { Input } from "../components/ui/input";
 // Importa un componente de entrada reutilizable.
 
 import {
@@ -22,7 +22,7 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 // Importa componentes para construir un menú desplegable (select).
 
 import { useMutation } from "convex/react";

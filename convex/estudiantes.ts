@@ -1,5 +1,6 @@
-import { mutation, query } from "./_generated/server";
+import { mutation, query, } from "./_generated/server";
 import { v } from "convex/values";
+import { Id } from './_generated/dataModel';
 
 // Crear un nuevo estudiante (mutation)
 export const crearEstudiante = mutation({
@@ -37,6 +38,13 @@ export const actualizarEstudiante = mutation({
     const { id, ...data } = args;
     await ctx.db.patch(id, data);
     return await ctx.db.get(id);
+  },
+});
+export const obtenerEstudiantePorId = query({ // <--- Asegúrate de que sea 'query'
+  args: { id: v.id("estudiantes") }, // <--- Asegúrate de que el argumento se llame 'id'
+  handler: async (ctx, args) => {
+    const estudiante = await ctx.db.get(args.id as Id<'estudiantes'>);
+    return estudiante || null;
   },
 });
 

@@ -1,4 +1,4 @@
-import { TablaMaestros } from "@/components/tabla-maestros";
+import { TablaMaestros } from "@/app/components/tabla-maestros";
 import Link from "next/link";
 
 export default function ConfigPage() {

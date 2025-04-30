@@ -1,10 +1,11 @@
+"use client"
 /**
  * # components/layout/navbar.tsx
  * * Define la barra de navegación principal de la aplicación.
  *   Incluye: logo, controles de tema y navegación.
  */
 
-import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { ThemeToggle } from "../theme/theme-toggle";
 import Link from "next/link";
 
 const APP_TITLE = "School App" as const;
@@ -47,6 +48,7 @@ const APP_TITLE2 = "Home" as const;
  * @see {@link ModeToggle} - Componente para alternar entre temas
  */
 export const Navbar: React.FC = () => {
+
   return (
     <nav 
       className="sticky top-0 z-50 w-full flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8 border-b"
@@ -55,12 +57,6 @@ export const Navbar: React.FC = () => {
       {/* Logo/Título */}
       <Link href="/" className="hover:opacity-80 transition-opacity">
         <h4>{APP_TITLE}</h4>
-      </Link>
-      <Link href="/" className="hover:opacity-80 transition-opacity">
-        <h4>{APP_TITLE2}</h4>
-      </Link>
-      <Link href="/config" className="hover:opacity-80 transition-opacity">
-        <h4>{"Config"}</h4>
       </Link>
       <Link href="/config/estudiantes" className="hover:opacity-80 transition-opacity">
         <h4>{"Estudiantes"}</h4>
@@ -77,3 +73,9 @@ export const Navbar: React.FC = () => {
   );
 };
  
+// <Link href="/" className="hover:opacity-80 transition-opacity">
+//         <h4>{APP_TITLE2}</h4>
+//       </Link>
+//       <Link href="/config" className="hover:opacity-80 transition-opacity">
+//         <h4>{"Config"}</h4>
+//       </Link>

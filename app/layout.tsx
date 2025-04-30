@@ -1,8 +1,8 @@
 import { Providers } from "./providers";
-import "@/app/styles/globals.css";
-import { ThemeProvider } from "@/components/theme/theme-provider";
+import "@/app/_styles/globals.css";
+import { ThemeProvider } from "./components/theme/theme-provider";
 import type { Metadata } from "next";
-import { Navbar } from "@/components/layout/navbar";
+import { Navbar } from "./components/layout/navbar";
 
 export const metadata: Metadata = {
   title: "School App",
@@ -65,7 +65,7 @@ export default function RootLayout({
   children,
 }: RootLayoutProps): React.ReactElement {
   return (
-    <html lang="es">
+    <html>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider
           attribute="class"
