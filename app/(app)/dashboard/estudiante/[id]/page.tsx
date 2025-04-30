@@ -26,7 +26,7 @@ export default function DetalleEstudiante() {
   const estudianteData = useQuery(
     api.estudiantes.obtenerEstudiantePorId,
     { id: id as Id<"estudiantes"> }
-  ); // Llamar a useQuery incondicionalmente
+  ); // Llamar a useQuery incondicionalmente 
 
   const estudiante = estudianteData as Estudiante | null | undefined;
 
