@@ -1,10 +1,14 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useQuery } from 'convex/react';
-import { api } from '@/convex/_generated/api';
-import { useParams } from 'next/navigation';
-import { Id } from '@/convex/_generated/dataModel';
+import React from "react";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { useParams } from "next/navigation";
+import { Id } from "@/convex/_generated/dataModel";
+import { DialogEstudiante } from "@/app/components/dialog-estudiante";
+import { DialogEliminarEstudiante } from "@/app/components/dialog-eliminar-estudiante";
+import { useUser } from '@clerk/nextjs';
+
 
 interface Estudiante {
   _id: Id<"estudiantes">;
@@ -18,11 +22,17 @@ interface Estudiante {
 }
 
 export default function DetalleEstudiante() {
+  const { isSignedIn, user, isLoaded } = useUser();
+
+  if (!isLoaded) {
+    return <div>Cargando información del usuario...</div>;
+  }
+
+  if (isSignedIn && user) {
   const { id } = useParams<{ id: string }>();
-  const estudianteData = useQuery(
-    api.estudiantes.obtenerEstudiantePorId,
-    { id: id as Id<"estudiantes"> }
-  );
+  const estudianteData = useQuery(api.estudiantes.obtenerEstudiantePorId, {
+    id: id as Id<"estudiantes">,
+  });
 
   const estudiante = estudianteData as Estudiante | null | undefined;
 
@@ -32,17 +42,39 @@ export default function DetalleEstudiante() {
       <div>
         {estudiante ? (
           <>
-            <p><strong>Matrícula:</strong> {estudiante.numeroMatricula}</p>
-            <p><strong>Nombre:</strong> {estudiante.nombre}</p>
-            <p><strong>Correo:</strong> {estudiante.correo}</p>
-            <p><strong>Carrera:</strong> {estudiante.carrera}</p>
-            <p><strong>Grado:</strong> {estudiante.grado}</p>
+            <p>
+              <strong>Matrícula:</strong> {estudiante.numeroMatricula}
+            </p>
+            <p>
+              <strong>Nombre:</strong> {estudiante.nombre}
+            </p>
+            <p>
+              <strong>Correo:</strong> {estudiante.correo}
+            </p>
+            <p>
+              <strong>Carrera:</strong> {estudiante.carrera}
+            </p>
+            <p>
+              <strong>Grado:</strong> {estudiante.grado}
+            </p>
+
+            <br />
+            <div className="flex gap-10  justify-center">
+              <DialogEliminarEstudiante id={estudiante._id} />
+              <DialogEstudiante estudiante={estudiante} />
+            </div>
           </>
         ) : (
           <p className="text-red-500">Estudiante no encontrado.</p>
         )}
       </div>
-      <button onClick={() => window.history.back()} className="mt-4 px-4 py-2 border rounded">Volver</button>
+      <br />
+      <button
+        onClick={() => window.history.back()}
+        className="mt-4 px-4 py-2 border rounded"
+      >
+        Volver
+      </button>
     </div>
   );
-}
+}}

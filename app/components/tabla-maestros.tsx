@@ -9,8 +9,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../components/ui/table";
-import { Skeleton } from "../components/ui/skeleton";
+} from "./ui/table";
+import { Skeleton } from "./ui/skeleton";
 import { DialogMaestro } from "./dialog-maestro";
 import { DialogEliminarMaestro } from "./dialog-eliminar-maestro";
 

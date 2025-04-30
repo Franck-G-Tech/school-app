@@ -9,8 +9,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../components/ui/table";
-import { Skeleton } from "../components/ui/skeleton";
+} from "./ui/table";
+import { Skeleton } from "./ui/skeleton";
 import { DialogEstudiante } from "./dialog-estudiante";
 import { DialogEliminarEstudiante } from "./dialog-eliminar-estudiante";
 import { useRouter } from "next/navigation"; // Importa useRouter

@@ -7,7 +7,7 @@
 
 import { ThemeToggle } from "../theme/theme-toggle";
 import Link from "next/link";
-
+import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/nextjs";
 const APP_TITLE = "School App" as const;
 //const APP_TITLE2 = "Home" as const;
  
@@ -68,6 +68,16 @@ export const Navbar: React.FC = () => {
       {/* Controles */}
       <div className="flex items-center gap-4">
         <ThemeToggle />
+
+        {/* Botones de autenticación */}
+        <SignedIn>
+          {/* Muestra el botón de perfil si el usuario está autenticado */}
+          <UserButton afterSignOutUrl="/" />
+        </SignedIn>
+        <SignedOut>
+          {/* Muestra el botón de login si el usuario no está autenticado */}
+          <SignInButton mode="modal" />
+        </SignedOut>
       </div>
     </nav>
   );
